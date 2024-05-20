@@ -6,22 +6,41 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        return true;
+        if (isBarking) {
+            return (clock >= 0 && clock < 8) || (clock >= 20 && clock <= 23);
+        }
+        return false;
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
-        return true;
+        int[] ages = { firstAge, secondAge, thirdAge };
+        for (int age: ages) {
+            if (age >= 13 && age <= 19) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
-        return true;
+        if (isSummer) {
+            return temp >= 25 && temp <= 45;
+        } else {
+            return temp >= 25 && temp <= 35;
+        }
     }
 
     public static double area(double width, double height) {
-        return 1;
+        if (width >= 0 && height >= 0) {
+            return width*height;
+        }
+        return -1;
     }
 
     public static double area(double radius) {
-        return 1;
+        if (radius >= 0) {
+            return radius*radius*Math.PI;
+        }
+        return -1;
     }
 }
